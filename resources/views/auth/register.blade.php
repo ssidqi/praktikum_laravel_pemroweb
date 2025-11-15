@@ -10,16 +10,16 @@
       @csrf
 
       <label>Nama</label>
-      <input type="text" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+      <input type="text" name="name" value="{{ old('name') }}" required>
 
       <label>Email</label>
-      <input type="email" name="email" value="{{ old('email') }}" required autocomplete="email">
+      <input type="email" name="email" value="{{ old('email') }}" required>
 
       <label>Password</label>
-      <input type="password" name="password" required autocomplete="new-password">
+      <input type="password" name="password" required>
 
       <label>Ulangi Password</label>
-      <input type="password" name="password_confirmation" required autocomplete="new-password">
+      <input type="password" name="password_confirmation" required>
 
       <button type="submit">Daftar</button>
     </form>

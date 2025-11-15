@@ -10,10 +10,10 @@
       @csrf
 
       <label>Email</label>
-      <input type="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+      <input type="email" name="email" value="{{ old('email') }}" required autofocus>
 
       <label>Password</label>
-      <input type="password" name="password" required autocomplete="current-password">
+      <input type="password" name="password" required>
 
       <label style="display:flex; gap:.5rem; align-items:center;">
         <input type="checkbox" name="remember"> Remember me
