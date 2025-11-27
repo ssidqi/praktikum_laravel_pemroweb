@@ -17,11 +17,10 @@ class Article extends Model
     protected $table = 'article';
     protected $fillable = [
         'title',
-
-
-        'body',
         'slug',
+        'body',
         'image',
+        'user_id'
 
     ];
 

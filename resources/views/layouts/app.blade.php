@@ -1,33 +1,30 @@
-<!doctype html>
-<html lang="id">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>@yield('title', 'Laravel App')</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@yield('title', 'Laravel News Portal')</title>
+    <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css">
 
-  <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css">
-
-  <style>
-    .container { max-width: 960px; margin: 2rem auto; }
-    .nav { display: flex; gap: .75rem; align-items: center; flex-wrap: wrap; }
-    .nav a.active { font-weight: bold; text-decoration: underline; }
-    .right { margin-left: auto; display: flex; gap: .75rem; align-items: center; }
-    .muted { color: #666; font-size: .9rem; }
-    .card { border: 1px solid #ddd; padding: 1.2rem; border-radius: .5rem; background: #fff; }
-    form.inline { display: inline; }
-    .error { color: #c00; }
-  </style>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: auto; padding: 20px; background:#f8f9fa }
+        .nav a { margin-right: 15px; text-decoration: none; }
+        .active { font-weight: bold; border-bottom: 2px solid black; }
+        .card { background:white;padding:20px;border-radius:10px;border:1px solid #ddd;margin-top:20px; }
+        .muted { color:#777; }
+        .row { display:flex; flex-wrap:wrap; gap:1rem; }
+        .flash { background: #d4edda; padding: 10px; margin-top: 10px; border-radius: 6px; color: #155724; }
+        form.inline { display:inline; }
+        button { cursor:pointer; }
+    </style>
 </head>
 <body>
-  <div class="container">
+
     @include('partials.nav')
-    <main class="row">
-      @yield('content')
+
+    <main>
+        @yield('content')
     </main>
-    <footer style="margin-top:2rem">
-      <hr>
-      <div class="muted">© 2025 Rajul Muna Project</div>
-    </footer>
-  </div>
+
 </body>
 </html>

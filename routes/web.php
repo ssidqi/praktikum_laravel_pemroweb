@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\DashboardController;
+use App\http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('pages.home');
-})->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::middleware('guest')->group(function() {
     Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
@@ -16,6 +17,9 @@ Route::middleware('guest')->group(function() {
 
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
 
-Route::get('/dashboard', function() {
-    return view('pages.dashboard');
-})->middleware('auth')->name('dashboard');
+Route::middleware('auth')->group(function(){
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    route::resource('articles', ArticleController::class)->except('show');
+});
+
+Route::get('/articles/{artile}', [ArticleController::class, 'show'])->name('articles.show');
